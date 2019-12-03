@@ -1,10 +1,10 @@
-defmodule FuelCounter do
+defmodule FuelCounter_part1 do
   def total_fuel do
-    "modules.txt"
+    "lib/inputs/modules.txt"
     |> File.stream!()
     |> Stream.map(&convert_line_to_int/1)
     |> Enum.map(&fuel_per_module/1)
-    |> Enum.reduce(0, fn x, acc -> x + acc end)
+    |> Enum.sum()
     |> IO.puts()
   end
 
